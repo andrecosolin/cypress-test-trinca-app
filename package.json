@@ -1,0 +1,25 @@
+{
+  "name": "cypress-test-trinca-app",
+  "version": "1.0.0",
+  "description": "Projeto de automação de testes utilizando Cypress para validar e assegurar a funcionalidade do Trinca App.",
+  "author": "Djonatas Camillo Borges",
+  "scripts": {
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
+    "cy:run:allure": "rm -rf allure-results && cypress run --env allure=true",
+    "allure:results": "allure generate allure-results --clean && allure open",
+    "lint:all": "eslint \"cypress/**/*js\" \"cypress/**/*.cy.js\"",
+    "lint:fix:all": "eslint \"cypress/**/*js\" \"cypress/**/*.cy.js\" --fix"
+  },
+  "dependencies": {
+    "cypress": "^12.14.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.3.1",
+    "@shelex/cypress-allure-plugin": "^2.40.1",
+    "eslint": "^8.56.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-cypress": "^2.15.1"
+  },
+  "type": "module"
+}
