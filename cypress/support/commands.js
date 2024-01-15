@@ -1,7 +1,7 @@
 /**
  * @param {Object} inputData - Objeto que representa os dados para registrar um usuário.
  *   Serão levados em consideração as seguintes keys: email e password
- * 
+ *
  * Exemplo de uso:
  *  cy.gui_register({email: 'userTest@gmail.com', password: 'test'})
  */
@@ -68,7 +68,7 @@ Cypress.Commands.add('gui_loginWithSession', () => {
 /**
  * @param {Object} inputData - Objeto que representa os dados de login do usuário.
  *   Serão levados em consideração as seguintes keys: email e password
- * 
+ *
  * Exemplo de uso:
  *  cy.gui_login({email: 'userTest@gmail.com', password: 'test'})
  */
@@ -101,7 +101,7 @@ Cypress.Commands.add('gui_login', (inputData={}) => {
 /**
  * @param {Object} eventFormData - Objeto que representa o formulário de eventos.
  *   Serão levados em consideração as seguintes keys: title{String}, price{Number}, date{Date} e observations{String}
- * 
+ *
  * Exemplo de uso:
  *  const eventToCreateEvent = {
       title: faker.lorem.sentence(4),

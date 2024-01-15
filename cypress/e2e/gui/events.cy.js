@@ -32,7 +32,7 @@ describe('Eventos', () => {
       cy.visit('/')
       cy.get('a[href="/eventos"]').click()
       cy.url().should('eq', `${Cypress.config('baseUrl')}/eventos`)
-      let formWithoutObservations = {...eventToCreateEvent}
+      const formWithoutObservations = {...eventToCreateEvent}
       formWithoutObservations.title += 'without observation'
       delete formWithoutObservations.observations
       cy.gui_createEvent(formWithoutObservations)
@@ -54,7 +54,7 @@ describe('Eventos', () => {
     })
 
     it('deve retornar mensagem de campo obrigatório caso não insira o valor do Título.', () => {
-      let formWithoutTitle = {...eventToCreateEvent}
+      const formWithoutTitle = {...eventToCreateEvent}
       delete formWithoutTitle.title
       cy.visit('/')
       cy.get('a[href="/eventos"]').click()
@@ -64,7 +64,7 @@ describe('Eventos', () => {
     })
 
     it('deve retornar mensagem de campo obrigatório caso não insira o valor do Custo.', () => {
-      let formWithoutPrice = {...eventToCreateEvent}
+      const formWithoutPrice = {...eventToCreateEvent}
       formWithoutPrice.price = ''
       cy.visit('/')
       cy.get('a[href="/eventos"]').click()
@@ -74,7 +74,7 @@ describe('Eventos', () => {
     })
 
     it('deve retornar mensagem de campo obrigatório caso não insira o valor da Data.', () => {
-      let formWithoutDate = {...eventToCreateEvent}
+      const formWithoutDate = {...eventToCreateEvent}
       delete formWithoutDate.date
       cy.visit('/')
       cy.get('a[href="/eventos"]').click()
@@ -122,7 +122,7 @@ describe('Eventos', () => {
 
     it('deve retornar sucesso ao editar um evento com todos os campos obrigatórios.', () => {
       cy.visit('/eventos')
-      let formWithoutObservations = {...eventToCreateEvent}
+      const formWithoutObservations = {...eventToCreateEvent}
       formWithoutObservations.title += 'without observation'
       delete formWithoutObservations.observations
       cy.gui_editEvent(eventToEditEvent.title, formWithoutObservations)
@@ -142,7 +142,7 @@ describe('Eventos', () => {
     })
 
     it('deve retornar mensagem de campo obrigatório caso não insira o valor do Título.', () => {
-      let formWithoutTitle = {...eventToEditEvent}
+      const formWithoutTitle = {...eventToEditEvent}
       delete formWithoutTitle.title
       formWithoutTitle.title = ''
       cy.visit('/eventos')
@@ -151,7 +151,7 @@ describe('Eventos', () => {
     })
 
     it('deve retornar mensagem de campo obrigatório caso não insira o valor do Custo.', () => {
-      let formWithoutPrice = {...eventToCreateEvent}
+      const formWithoutPrice = {...eventToCreateEvent}
       formWithoutPrice.price = ''
       cy.visit('/eventos')
       cy.gui_editEvent(eventToEditEvent.title, formWithoutPrice)
@@ -159,7 +159,7 @@ describe('Eventos', () => {
     })
 
     it('deve retornar mensagem de campo obrigatório caso não insira o valor da Data.', () => {
-      let formWithoutDate = {...eventToCreateEvent}
+      const formWithoutDate = {...eventToCreateEvent}
       delete formWithoutDate.date
       cy.visit('/eventos')
       cy.gui_editEvent(eventToEditEvent.title, formWithoutDate)
