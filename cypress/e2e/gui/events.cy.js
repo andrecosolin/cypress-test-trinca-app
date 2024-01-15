@@ -53,6 +53,17 @@ describe('Eventos', () => {
       cy.contains('strong', eventToCreateEvent.title).should('be.visible')
     })
 
+    it('deve retornar sucesso ao cadastrar um evento com custo sendo um número tipo float.', () => {
+      cy.visit('/')
+      cy.get('a[href="/eventos"]').click()
+      cy.url().should('eq', `${Cypress.config('baseUrl')}/eventos`)
+      const form = {...eventToCreateEvent}
+      form.price += 50.50
+      cy.gui_createEvent(form)
+      cy.url().should('eq', `${Cypress.config('baseUrl')}/eventos`)
+      cy.contains('strong', form.title).should('be.visible')
+    })
+
     it('deve retornar mensagem de campo obrigatório caso não insira o valor do Título.', () => {
       const formWithoutTitle = {...eventToCreateEvent}
       delete formWithoutTitle.title
@@ -139,6 +150,15 @@ describe('Eventos', () => {
       // eslint-disable-next-line cypress/no-unnecessary-waiting
       cy.wait(1000)
       cy.contains('strong', eventToCreateEvent.title).should('be.visible')
+    })
+
+    it('deve retornar sucesso ao cadastrar um evento com custo sendo um número tipo float.', () => {
+      cy.visit('/eventos')
+      const form = {...eventToCreateEvent}
+      form.price += 50.50
+      cy.gui_createEvent(form)
+      cy.url().should('eq', `${Cypress.config('baseUrl')}/eventos`)
+      cy.contains('strong', form.title).should('be.visible')
     })
 
     it('deve retornar mensagem de campo obrigatório caso não insira o valor do Título.', () => {

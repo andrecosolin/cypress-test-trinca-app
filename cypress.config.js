@@ -18,6 +18,9 @@ export default defineConfig({
     },
     experimentalRunAllSpecs: true,
     baseUrl: 'https://trinca-app-bbq.vercel.app',
-    allure:true
+    allure:true,
+    env: {
+      screenshotOnRunFailure: true
+    }
   },
 })

@@ -12,6 +12,7 @@
 3. O título aceita string vazia.
 4. Ao entrar em um evento para editá-lo, o campo de data não carrega a data criada.
 5. Quando crio um evento, ao invés da mensagem dizer que eu criei o evento com sucesso, ela diz que realizei login com sucesso.
+6. Em caso de Título e Observações extensas, os campos ultrapassam o limite do card.
 
 ## Melhorias:
 
@@ -26,8 +27,8 @@
 
 ### Eventos:
 1. Ajustar o título do campo Data do evento.
-2. Melhorar a aceitação de números float no campo de custo.
-3. Adicionar validações para impedir o cadastro de eventos com o mesmo nome ou com o mesmo nome e data.
-4. Ajustar a mensagem após a criação de um evento para refletir corretamente a ação realizada.
-5. Adicionar validações de tamanho máximo e mínimo nos campos necessários.
-6. Adicionar validação de valor mínimo e máximo de custo.
+2. Adicionar validações para impedir o cadastro de eventos com o mesmo nome ou com o mesmo nome e data.
+3. Ajustar a mensagem após a criação de um evento para refletir corretamente a ação realizada.
+4. Adicionar validações de tamanho máximo e mínimo nos campos necessários.
+5. Adicionar validação de valor mínimo e máximo de custo.
+6. Ajustar layout dos cards em caso de Título e Observações muito longo. Talvez limitando o tamanho já resolva, mas o ideal é rever essa questão.
