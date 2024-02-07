@@ -2,6 +2,9 @@
 
 Projeto de automação de testes utilizando Cypress para validar e assegurar a funcionalidade do Trinca App.
 
+*OBS: Seria legal fazer um bdd já do que o stakeholder pede para fazer no app Trinca. 
+Que tu acha? 
+
 ## Instalação
 
 O primeiro passo é que você tenha instalado o Node.js e o NPM.
